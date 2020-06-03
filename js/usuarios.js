@@ -39,7 +39,7 @@ function cadUsuario(){
   const senha = document.getElementById("senha").value;
   let id = usuarios.length;
   const usuario = {id: Date.now(),
-     nome, endereco, telefone, email,senha,status: 'Ativo'};
+     nome, endereco, telefone, email,senha,status: 'Ativado'};
      //usuarios.push(usuario); 
   // gravar no localstorage
   //window.localStorage.setItem("usuarios",JSON.stringify([]));
@@ -192,7 +192,7 @@ function cadUsuario(){
       showConfirmButton: false,
       timer: 1500
     });
-   }else{
+   }{
      if(usuariosGravados[usuarioIndex].senha !== senha){
       Swal.fire({
     
@@ -202,7 +202,16 @@ function cadUsuario(){
         timer: 1500
       }); 
       document.getElementById("senha").value = '';
-     }else{
+     }if(usuariosGravados[usuarioIndex].status !== "Ativado"){
+      Swal.fire({
+    
+        icon: 'warning',
+        title: 'Sua Conta está Desativada',
+        showConfirmButton: false,
+        timer: 1500
+      });
+     }
+     else{
       const Toast = Swal.mixin({
         toast: true,
         position: 'top-end',

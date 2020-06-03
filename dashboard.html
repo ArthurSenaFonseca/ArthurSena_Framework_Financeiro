@@ -23,35 +23,30 @@
         
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Usuários
+            Perfil
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Perfil</a>
-            <a class="dropdown-item" href="gerenciarUsuario.html">Gerenciar</a>
-            <a class="dropdown-item" href="index.html">Sair</a>
+            <a class="dropdown-item" href="gerenciarUsuario.html">Usuário</a>
+            <a class="dropdown-item" href="index.html">Senha</a>
 
             
           </div>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Produtos
+            Contas
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="gerenciarProdutos.html">Gerenciar</a>
-            <a class="dropdown-item" href="listarProdutos.html">Listar</a>
+            <a class="dropdown-item" href="gerenciarProdutos.html">Categorias</a>
+
             
           </div>
         </li>
         
         <li class="nav-item">
-          <a class="nav-link " href="gerenciarCompras.html" >Compras </a>
+          <a class="nav-link " href="gerenciarCompras.html" >Lançamentos </a>
         </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <a href="gerenciarCompras.html"> <img src="img/cart4.png" alt=""><span class="badge badge-primary" id="cart">1</span></a>
-        
-      </form>
+          <a class="nav-link " href="index.html" >Logout </a>
     </div>
   </nav>
     <div class="contenair">
@@ -59,7 +54,7 @@
            <div class="col-md-4">
              <div class="card">
                 <div class="card-header" align="center">
-                  <h1>Produtos</h1>
+                  <h1>Total de Entradas</h1>
                 </div>
                 <div class="card-body card-totais">
                   <h1 id="totalprodutos">0</h1>
@@ -69,14 +64,20 @@
            <div class="col-md-4">
             <div class="card">
               <div class="card-header" align="center">
-                <h1>Usuários</h1>
+                <h1>Total Saídas</h1>
               </div>
               <div class="card-body card-totais">
                 <h1 id="totalusuarios">0</h1>
               </div>
            </div>
            </div>
-           <div class="col-md-4"></div>
+           <div class="col-md-4"><div class="card">
+            <div class="card-header" align="center">
+              <h1>Saldo</h1>
+            </div>
+            <div class="card-body card-totais">
+              <h1 id="totalusuarios">0</h1>
+            </div></div>
          </div>
     
   </div>
