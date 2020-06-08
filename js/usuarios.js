@@ -200,7 +200,8 @@ function cadUsuario(){
         title: 'Senha informada está incorreta',
         showConfirmButton: false,
         timer: 1500
-      }); 
+      });
+      
       document.getElementById("senha").value = '';
      }if(usuariosGravados[usuarioIndex].status !== "Ativado"){
       Swal.fire({

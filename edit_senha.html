@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script src="js/editar_perfil.js"></script>
+
+  <title>CMV - Farlen</title>
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">CMV - Sena</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="dashboard.html">Home </a>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Perfil
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="gerenciarUsuario.html">Usuário</a>
+                <a class="dropdown-item" href="edit_senha.html">Senha</a>
+    
+                
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Gerenciar Gastos
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="cad_categoria.html">Categoria</a>
+                <a class="dropdown-item" href="cad_conta.html">Conta</a>
+    
+                
+              </div>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link " href="gerenciarCompras.html" >Lançamentos </a>
+            </li>
+              <a class="nav-link " href="index.html" >Logout </a>
+        </div>
+      </nav>
+  </header>
+
+<body>
+
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <h2>Alterar Senha</h2>
+      <div class="form-group" hidden>
+        <label for="">ID:</label>
+        <input type="text" class="form-control" id="Redid">
+     </div>
+     <div class="form-group">
+         <label for="">Redefinir sua senha</label>
+         <input type="password" class="form-control" id="Redsenha">
+      </div>
+      <div>
+        <button class="btn btn-outline-success btn-block" onclick="Salvar()">Salvar</button>
+       
+      </div>
+    </div>
+    <div class="col-4"></div>
+  </div>
+
+  
+    <div class="col-3"></div>
+  </div>
+
+
+</body>
+</html>
