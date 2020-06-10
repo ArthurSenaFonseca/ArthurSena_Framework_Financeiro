@@ -1,7 +1,13 @@
 function salvarProduto(){
     const nome = document.getElementById("nome").value;
-     
-    
+    if(nome == ""){
+      Swal.fire({
+          icon: 'error',
+          title: 'Preencha todos os campos!',
+          text: '',
+          footer: ''
+      })
+    }else{
     const produto = {id:Date.now(),nome};
     
     let produtoGravado = JSON.parse(window.localStorage.getItem("produtos"));
@@ -35,7 +41,8 @@ function salvarProduto(){
       limpar();
       listarprodutos();
     }
-   
+    }
+  
    
   
   

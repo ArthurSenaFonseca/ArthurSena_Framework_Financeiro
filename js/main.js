@@ -1,11 +1,4 @@
-function listaCartBagde(){
-  let cart = JSON.parse(window.localStorage.getItem("cartComprados"));
-  if(cart){
-   document.getElementById("cart").innerHTML = cart.length;
-  }else{
-   document.getElementById("cart").innerHTML = 0;
-  }
-}
+/*
 function totalProdutos(){
   let produtos = JSON.parse(window.localStorage.getItem("produtos"));
   if(produtos){
@@ -22,7 +15,6 @@ function totalUsuarios(){
    document.getElementById("totalusuarios").innerHTML = 0;
   }
 }
-
-listaCartBagde();
 totalProdutos();
 totalUsuarios();
+*/

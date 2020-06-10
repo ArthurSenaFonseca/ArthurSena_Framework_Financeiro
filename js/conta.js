@@ -6,7 +6,14 @@ function salvarProduto(){
     const descricao = document.getElementById("descricao").value;
     const tipo = document.getElementById("tipo").value;
     const categoria = document.getElementById("categoria").value;
-     
+    if(descricao == "" || tipo == ""){
+      Swal.fire({
+          icon: 'error',
+          title: 'Preencha todos os campos!',
+          text: '',
+          footer: ''
+      })
+  }else{
     
     const produto = {id:Date.now(),descricao, tipo, categoria};
     
@@ -41,6 +48,7 @@ function salvarProduto(){
       limpar();
       listarprodutos();
     }
+  }
    
    
   
@@ -126,7 +134,7 @@ function salvarProduto(){
           contasGravado.splice(produtoIndex,1);
           window.localStorage.setItem('contas', JSON.stringify(contasGravado));
           if(contasGravado.length > 0){
-            listarcontas();
+            listarprodutos();
           }else{
             row = document.getElementById("tbody");
             row.innerHTML = "";
@@ -180,11 +188,10 @@ function salvarProduto(){
     const tipo = document.getElementById("tipo").value;
     const categoria = document.getElementById("categoria").value;
   
-    let produtoGravado = JSON.parse(windows.localStorage.getItem("contas"));
-    let produtoIndex = produtoGravado.findIndex(produto => produto.id === id);
+    let contagravada = JSON.parse(window.localStorage.getItem("contas"));
   
     // como fazer para atualiza a posicao do array
-    produtoGravado[id] = {id,nome,endereco,telefone,email,cidade};
+    contagravada[id] = {id,descricao,tipo,categoria};
     Swal.fire({
       
       icon: 'success',
@@ -193,10 +200,43 @@ function salvarProduto(){
       timer: 1500
     });
     limpar();
-    listarcontas();
+    listarprodutos();
   
   }
+  function alterarPr(){
+    const id = document.getElementById("id").value;
+    const descricao = document.getElementById("descricao").value;
+    const tipo = document.getElementById("tipo").value;
+    const categoria = document.getElementById("categoria").value;
   
+    // como fazer para atualiza a posicao do array
+    usuarios[id] = {id,descricao,tipo,categoria};
+    Swal.fire({
+  
+      icon: 'success',
+      title: 'Usuário atualizado com sucesso!',
+      showConfirmButton: false,
+      timer: 1500
+    });
+    limpar();
+    listarprodutos();
+  
+  }
+  function ListarCategorias(){
+    let linha = "";
+    let categorias = JSON.parse(localStorage.getItem("produtos"));
+    if(categorias){
+    categorias.forEach(produto => {
+      let row = document.getElementById("categoria");
+      if(row != null){
+        linha += 
+        "<option value="+produto.nome+">"+produto.nome+"</option>"
+        row.innerHTML = linha;
+      }
+    });
+  }
+    }
+
   
   function listarprodutos(){
     let linha = "";
@@ -427,4 +467,6 @@ function salvarProduto(){
      document.getElementById("cart").innerHTML = 0;
     }
   }
+  ListarCategorias();
    listarprodutos();
+   
