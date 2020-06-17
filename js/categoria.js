@@ -173,10 +173,14 @@ function salvarProduto(){
   function alterarProduto(){
     const id = document.getElementById("id").value;
     const nome = document.getElementById("nome").value;
-    let produtoGravado = JSON.parse(window.localStorage.getItem("produtos"));
-  
-    // como fazer para atualiza a posicao do array
-    produtoGravado[id] = {id,nome};
+    produtoGravado = JSON.parse(window.localStorage.getItem("produtos"));
+    let produtoindex = produtoGravado.findIndex((produtos => produtos.id == id));
+    debugger
+    if(produtoindex >= 0){
+      
+      produtoGravado[produtoindex] = {id,nome};
+      window.localStorage.setItem("produtos",JSON.stringify(produtoGravado));
+      }
     Swal.fire({
       
       icon: 'success',

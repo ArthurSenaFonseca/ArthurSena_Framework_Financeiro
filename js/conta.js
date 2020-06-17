@@ -188,10 +188,12 @@ function salvarProduto(){
     const tipo = document.getElementById("tipo").value;
     const categoria = document.getElementById("categoria").value;
   
-    let contagravada = JSON.parse(window.localStorage.getItem("contas"));
-  
-    // como fazer para atualiza a posicao do array
-    contagravada[id] = {id,descricao,tipo,categoria};
+    contagravada = JSON.parse(window.localStorage.getItem("contas"));
+    let containdex = contagravada.findIndex((contas => contas.id == id));
+    if(containdex >= 0){
+    contagravada[containdex] = {id,descricao,tipo,categoria};
+    window.localStorage.setItem("contas",JSON.stringify(contagravada));
+    }
     Swal.fire({
       
       icon: 'success',
